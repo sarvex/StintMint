@@ -12,6 +12,7 @@ buildscript {
     classpath 'com.neenbedankt.gradle.plugins:android-apt:1.7'
     classpath 'io.fabric.tools:gradle:1.19.2'
     classpath 'com.google.gms:google-services:1.3.0-beta1'
+    classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:0.12.613'
   }
 }
 
