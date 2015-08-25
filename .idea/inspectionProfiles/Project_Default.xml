@@ -173,11 +173,6 @@
     <inspection_tool class="ClassNameDiffersFromFileName" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="ClassNamePrefixedWithPackageName" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="ClassNameSameAsAncestorName" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="ClassNamingConvention" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="m_regex" value="[A-Z][A-Za-z\d]*" />
-      <option name="m_minLength" value="8" />
-      <option name="m_maxLength" value="64" />
-    </inspection_tool>
     <inspection_tool class="ClassNestingDepth" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="m_limit" value="1" />
     </inspection_tool>
@@ -579,11 +574,6 @@
     <inspection_tool class="InstanceVariableInitialization" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="m_ignorePrimitives" value="false" />
     </inspection_tool>
-    <inspection_tool class="InstanceVariableNamingConvention" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="m_regex" value="m_[a-z][A-Za-z\d]*" />
-      <option name="m_minLength" value="5" />
-      <option name="m_maxLength" value="32" />
-    </inspection_tool>
     <inspection_tool class="InstanceVariableOfConcreteClass" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="InstanceVariableUninitializedUse" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="m_ignorePrimitives" value="false" />
@@ -871,10 +861,6 @@
       <option name="m_ignoreForConstructors" value="false" />
       <option name="m_ignoreForPropertySetters" value="false" />
       <option name="m_ignoreForAbstractMethods" value="false" />
-    </inspection_tool>
-    <inspection_tool class="ParameterNameDiffersFromOverriddenParameter" enabled="true" level="WARNING" enabled_by_default="true">
-      <option name="m_ignoreSingleCharacterNames" value="false" />
-      <option name="m_ignoreOverridesOfLibraryMethods" value="false" />
     </inspection_tool>
     <inspection_tool class="ParameterNamingConvention" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="m_regex" value="[a-z][A-Za-z\d]*" />

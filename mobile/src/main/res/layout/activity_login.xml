@@ -32,7 +32,7 @@
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
     android:layout_alignParentStart="true"
-    android:text="Sign Up"/>
+    android:text="@string/sign_up"/>
 
   <Button
     android:id="@+id/button_sign_in"
@@ -41,5 +41,5 @@
     android:layout_alignEnd="@+id/password"
     android:layout_alignParentBottom="true"
     android:layout_alignParentEnd="true"
-    android:text="Sign In"/>
+    android:text="@string/sign_in"/>
 </RelativeLayout>

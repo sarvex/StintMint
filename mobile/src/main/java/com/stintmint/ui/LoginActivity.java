@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
   @Bind(R.id.password) EditText password;
 
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
+  protected void onCreate(final Bundle savedInstanceState) {
     requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
     super.onCreate(savedInstanceState);
 
@@ -34,18 +34,18 @@ public class LoginActivity extends AppCompatActivity {
   }
 
   @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
+  public boolean onCreateOptionsMenu(final Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
     getMenuInflater().inflate(R.menu.menu_login, menu);
     return true;
   }
 
   @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
+  public boolean onOptionsItemSelected(final MenuItem item) {
     // Handle action bar item clicks here. The action bar will
     // automatically handle clicks on the Home/Up button, so long
     // as you specify a parent activity in AndroidManifest.xml.
-    int id = item.getItemId();
+    final int id = item.getItemId();
 
     if (id == R.id.action_settings) {
       return true;
@@ -55,12 +55,12 @@ public class LoginActivity extends AppCompatActivity {
   }
 
   @OnClick(R.id.button_login_sign_up)
-  public void signUp(View view) {
+  public void signUp(final View view) {
     startActivity(new Intent(this, SignUpActivity.class));
   }
 
   @OnClick(R.id.button_sign_in)
-  public void signIn(View view) {
+  public void signIn(final View view) {
     final String username = this.username.getText().toString().trim();
     final String password = this.password.getText().toString().trim();
 
@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
       setProgressBarIndeterminate(true);
       ParseUser.logInInBackground(username, password, new LogInCallback() {
         @Override
-        public void done(ParseUser user, ParseException exception) {
+        public void done(final ParseUser user, final ParseException exception) {
           setProgressBarIndeterminate(false);
           if (exception == null) {
             startActivity(new Intent(LoginActivity.this, MainActivity.class)

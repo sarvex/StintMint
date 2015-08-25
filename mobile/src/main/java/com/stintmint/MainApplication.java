@@ -21,8 +21,7 @@ public class MainApplication extends Application {
     Parse.enableLocalDatastore(this);
     Parse.initialize(this, BuildConfig.PARSE_APP_ID, BuildConfig.PARSE_API_KEY);
 
-    TwitterAuthConfig authConfig = new TwitterAuthConfig(BuildConfig.TWITTER_KEY, BuildConfig.TWITTER_SECRET);
+    final TwitterAuthConfig authConfig = new TwitterAuthConfig(BuildConfig.TWITTER_KEY, BuildConfig.TWITTER_SECRET);
     Fabric.with(this, new Crashlytics(), new Twitter(authConfig));
-
   }
 }
