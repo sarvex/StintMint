@@ -37,7 +37,7 @@
     android:inputType="textEmailAddress"/>
 
   <Button
-    android:id="@+id/signUpButton"
+    android:id="@+id/button_sign_up"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"

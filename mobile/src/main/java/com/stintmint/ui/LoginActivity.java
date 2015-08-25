@@ -1,9 +1,16 @@
-package com.stintmint;
+package com.stintmint.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.stintmint.R;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -11,6 +18,7 @@ public class LoginActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_login);
+    ButterKnife.bind(this);
   }
 
   @Override
@@ -27,11 +35,15 @@ public class LoginActivity extends AppCompatActivity {
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
 
-    //noinspection SimplifiableIfStatement
     if (id == R.id.action_settings) {
       return true;
     }
 
     return super.onOptionsItemSelected(item);
+  }
+
+  @OnClick(R.id.button_sign_up)
+  public void signUp(View view) {
+    startActivity(new Intent(this, SignUpActivity.class));
   }
 }

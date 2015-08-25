@@ -6,7 +6,7 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context="com.stintmint.LoginActivity">
+                tools:context="com.stintmint.ui.LoginActivity">
 
   <EditText
     android:id="@+id/username"
@@ -27,7 +27,7 @@
     android:inputType="textPassword"/>
 
   <Button
-    android:id="@+id/signUpButton"
+    android:id="@+id/button_sign_up"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
@@ -35,7 +35,7 @@
     android:text="Sign Up"/>
 
   <Button
-    android:id="@+id/signInButton"
+    android:id="@+id/button_sign_in"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_alignEnd="@+id/password"
