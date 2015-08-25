@@ -21,10 +21,8 @@ import butterknife.OnClick;
 
 public class LoginActivity extends AppCompatActivity {
 
-  @Bind(R.id.username)
-  EditText username;
-  @Bind(R.id.password)
-  EditText password;
+  @Bind(R.id.username) EditText username;
+  @Bind(R.id.password) EditText password;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

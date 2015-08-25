@@ -21,12 +21,9 @@ import butterknife.OnClick;
 
 public class SignUpActivity extends AppCompatActivity {
 
-  @Bind(R.id.username)
-  EditText username;
-  @Bind(R.id.password)
-  EditText password;
-  @Bind(R.id.email)
-  EditText email;
+  @Bind(R.id.username) EditText username;
+  @Bind(R.id.password) EditText password;
+  @Bind(R.id.email) EditText email;
 
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
