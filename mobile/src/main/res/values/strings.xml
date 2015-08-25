@@ -8,5 +8,5 @@
   <string name="password_hint">Password</string>
   <string name="email_hint">email@server.com</string>
   <string name="sign_up_btn_lbl">Sign Up</string>
-  <string name="title_activity_login">LoginActivity</string>
+  <string name="title_activity_login">Login Activity</string>
 </resources>
