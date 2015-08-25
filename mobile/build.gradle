@@ -4,6 +4,7 @@ apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'io.fabric'
 apply plugin: 'idea'
 apply plugin: 'checkstyle'
+apply plugin: 'com.google.gms.google-services'
 
 android {
   compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
@@ -16,10 +17,13 @@ android {
     versionCode Integer.parseInt(project.VERSION_CODE)
     versionName project.VERSION_CODE
 
-    buildConfigField "String", "PARSE_KEY", "\"WUHyirx5U73etKmHApaglKUkqaxpMtTgvvqoVh0c\""
-    buildConfigField "String", "PARSE_TOKEN", "\"YzkWXpZaTrgmyNJ37A2oZ7MzojEgSisiBggtqMxl\""
+    buildConfigField "String", "PARSE_APP_ID", "\"WUHyirx5U73etKmHApaglKUkqaxpMtTgvvqoVh0c\""
+    buildConfigField "String", "PARSE_API_KEY", "\"YzkWXpZaTrgmyNJ37A2oZ7MzojEgSisiBggtqMxl\""
     buildConfigField "String", "TWITTER_KEY", "\"BAEJBTDRh1dFQYejH8Rpc2Ws9\""
     buildConfigField "String", "TWITTER_SECRET", "\"z3Sc3ZZgPlWsTi1kk5mql3dyzwppoYyQXT8k41ufsCiqVbxoln\""
+    buildConfigField "String", "GCM_SERVER_API_KEY", "\"AIzaSyBufChFr9zBLFShSrtj5h3E5DQ3q-Mq7_M\""
+    buildConfigField "String", "GCM_SER_ID", "\"270999624614\""
+
   }
 
   lintOptions {
@@ -78,24 +82,13 @@ android {
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   wearApp project(':wear')
-  compile 'com.android.support:appcompat-v7:23.0.0'
-  compile 'com.android.support:design:23.0.0'
-  compile 'com.android.support:recyclerview-v7:23.0.0'
-  compile 'com.android.support:support-v4:23.0.0'
-  compile 'com.google.android.gms:play-services:7.8.0'
 
-  compile 'com.parse:parse-android:1.10.1'
-  compile 'com.facebook.android:facebook-android-sdk:4.5.0'
-  compile 'com.squareup.retrofit:retrofit:1.9.0'
-  compile 'com.squareup.picasso:picasso:2.5.2'
-  compile 'com.jakewharton:butterknife:7.0.1'
 
-  compile "org.parceler:parceler-api:1.0.3"
+
+
   apt "org.parceler:parceler:1.0.3"
 
-  compile 'com.sora.util.akatsuki:akatsuki-api:0.0.1'
   apt 'com.sora.util.akatsuki:akatsuki-compiler:0.0.1'
-  compile 'com.sora.util.akatsuki:akatsuki-parceler:0.0.1@aar'
 
   debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
   releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
@@ -103,4 +96,24 @@ dependencies {
   compile group: 'com.crashlytics.sdk.android', name: 'crashlytics', version: '2.5.1', ext: 'aar', transitive: true
   compile group: 'com.twitter.sdk.android', name: 'twitter', version: '1.7.2', ext: 'aar', transitive: true
   compile group: 'com.digits.sdk.android', name: 'digits', version: '1.7.2', ext: 'aar', transitive: true
+  compile 'com.android.support:appcompat-v7:23.0.0'
+  compile 'com.android.support:design:23.0.0'
+  compile 'com.android.support:recyclerview-v7:23.0.0'
+  compile 'com.android.support:support-v4:23.0.0'
+  compile 'com.google.android.gms:play-services:7.8.0'
+  compile 'com.google.android.gms:play-services-wallet:7.8.0'
+  compile 'com.google.android.gms:play-services-analytics:7.8.0'
+  compile 'com.google.android.gms:play-services-identity:7.8.0'
+  compile 'com.google.android.gms:play-services-plus:7.8.0'
+  compile 'com.google.android.gms:play-services-gcm:7.8.0'
+  compile 'com.google.android.gms:play-services-location:7.8.0'
+  compile 'com.google.android.gms:play-services-maps:7.8.0'
+  compile 'com.parse:parse-android:1.10.1'
+  compile 'com.facebook.android:facebook-android-sdk:4.5.0'
+  compile 'com.squareup.retrofit:retrofit:1.9.0'
+  compile 'com.squareup.picasso:picasso:2.5.2'
+  compile 'com.jakewharton:butterknife:7.0.1'
+  compile 'org.parceler:parceler-api:1.0.3'
+  compile 'com.sora.util.akatsuki:akatsuki-api:0.0.1'
+  compile 'com.sora.util.akatsuki:akatsuki-parceler:0.0.1@aar'
 }
