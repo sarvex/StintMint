@@ -1,20 +1,33 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.hugo'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'io.fabric'
+apply plugin: 'idea'
+apply plugin: 'checkstyle'
 
 android {
-  compileSdkVersion 23
-  buildToolsVersion "23.0.0"
+  compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
+  buildToolsVersion project.BUILD_TOOLS_VERSION
 
   defaultConfig {
     applicationId "com.stintmint"
     multiDexEnabled true
-    versionCode 1
-    versionName "1.0"
+    targetSdkVersion Integer.parseInt(project.TARGET_SDK_VERSION)
+    versionCode Integer.parseInt(project.VERSION_CODE)
+    versionName project.VERSION_CODE
+
+    buildConfigField "String", "PARSE_KEY", "\"WUHyirx5U73etKmHApaglKUkqaxpMtTgvvqoVh0c\""
+    buildConfigField "String", "PARSE_TOKEN", "\"YzkWXpZaTrgmyNJ37A2oZ7MzojEgSisiBggtqMxl\""
+    buildConfigField "String", "TWITTER_KEY", "\"BAEJBTDRh1dFQYejH8Rpc2Ws9\""
+    buildConfigField "String", "TWITTER_SECRET", "\"z3Sc3ZZgPlWsTi1kk5mql3dyzwppoYyQXT8k41ufsCiqVbxoln\""
   }
 
   lintOptions {
     disable 'InvalidPackage'
+  }
+
+  dexOptions {
+    javaMaxHeapSize "4g"
   }
 
   packagingOptions {
@@ -28,23 +41,23 @@ android {
 
   productFlavors {
     edge {
-      minSdkVersion 21
-      maxSdkVersion 23
+      minSdkVersion Integer.parseInt(project.CURRENT_SDK_VERSION) + 1
+      maxSdkVersion Integer.parseInt(project.EDGE_SDK_VERSION)
     }
 
     current {
-      minSdkVersion 17
-      maxSdkVersion 20
+      minSdkVersion Integer.parseInt(project.SUPPORT_SDK_VERSION) + 1
+      maxSdkVersion Integer.parseInt(project.CURRENT_SDK_VERSION)
     }
 
     support {
-      minSdkVersion 14
-      maxSdkVersion 15
+      minSdkVersion Integer.parseInt(project.LEGACY_SDK_VERSION) + 1
+      maxSdkVersion Integer.parseInt(project.SUPPORT_SDK_VERSION)
     }
 
     legacy {
-      minSdkVersion 9
-      maxSdkVersion 13
+      minSdkVersion Integer.parseInt(project.MIN_SDK_VERSION)
+      maxSdkVersion Integer.parseInt(project.LEGACY_SDK_VERSION)
     }
   }
 
@@ -66,11 +79,12 @@ dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   wearApp project(':wear')
   compile 'com.android.support:appcompat-v7:23.0.0'
-  compile 'com.android.support:design:22.2.0'
-  compile 'com.android.support:support-v4:21.0.3'
+  compile 'com.android.support:design:23.0.0'
   compile 'com.android.support:recyclerview-v7:23.0.0'
+  compile 'com.android.support:support-v4:23.0.0'
   compile 'com.google.android.gms:play-services:7.8.0'
 
+  compile 'com.parse:parse-android:1.10.1'
   compile 'com.facebook.android:facebook-android-sdk:4.5.0'
   compile 'com.squareup.retrofit:retrofit:1.9.0'
   compile 'com.squareup.picasso:picasso:2.5.2'
@@ -85,4 +99,8 @@ dependencies {
 
   debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
   releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
+
+  compile group: 'com.crashlytics.sdk.android', name: 'crashlytics', version: '2.5.1', ext: 'aar', transitive: true
+  compile group: 'com.twitter.sdk.android', name: 'twitter', version: '1.7.2', ext: 'aar', transitive: true
+  compile group: 'com.digits.sdk.android', name: 'digits', version: '1.7.2', ext: 'aar', transitive: true
 }
