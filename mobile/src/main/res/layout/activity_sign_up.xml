@@ -6,39 +6,42 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context="com.stintmint.LoginActivity">
+                tools:context="com.stintmint.ui.SignUpActivity">
 
   <EditText
     android:id="@+id/username"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
     android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
     android:hint="@string/username_hint"/>
 
   <EditText
     android:id="@+id/password"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
     android:layout_below="@+id/username"
+    android:layout_centerHorizontal="true"
     android:ems="10"
     android:hint="@string/password_hint"
     android:inputType="textPassword"/>
 
+  <EditText
+    android:id="@+id/email"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/password"
+    android:layout_centerHorizontal="true"
+    android:ems="10"
+    android:hint="@string/email_hint"
+    android:inputType="textEmailAddress"/>
+
   <Button
     android:id="@+id/signUpButton"
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
     android:layout_alignParentStart="true"
-    android:text="Sign Up"/>
-
-  <Button
-    android:id="@+id/signInButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignEnd="@+id/password"
-    android:layout_alignParentBottom="true"
-    android:text="Sign In"/>
+    android:gravity="center"
+    android:text="@string/sign_up_btn_lbl"/>
 </RelativeLayout>
