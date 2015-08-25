@@ -9,4 +9,9 @@
   <string name="email_hint">email@server.com</string>
   <string name="sign_up_btn_lbl">Sign Up</string>
   <string name="title_activity_login">Login Activity</string>
+  <string name="error_title">Oops!</string>
+  <string name="username_cannot_be_empty">Username cannot be empty</string>
+  <string name="password_cannot_be_empty">Password cannot be empty</string>
+  <string name="email_cannot_be_empty">EMail cannot be empty</string>
+  <string name="action_logout">Logout</string>
 </resources>

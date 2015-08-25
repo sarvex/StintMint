@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.parse.ParseAnalytics;
+import com.parse.ParseUser;
 import com.stintmint.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +19,14 @@ public class MainActivity extends AppCompatActivity {
 
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
-    startActivity(new Intent(this, LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
+    if (ParseUser.getCurrentUser() == null) {
+      toLoginActivity();
+    }
+  }
+
+  private void toLoginActivity() {
+    startActivity(new Intent(this, LoginActivity.class)
+        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
   }
 
   @Override
@@ -30,11 +38,21 @@ public class MainActivity extends AppCompatActivity {
   @Override
   public boolean onOptionsItemSelected(final MenuItem item) {
     final int id = item.getItemId();
+    boolean result = false;
 
-    if (id == R.id.action_settings) {
-      return true;
+    switch (id) {
+      case R.id.action_logout:
+        ParseUser.logOutInBackground();
+        toLoginActivity();
+        result = true;
+        break;
+      case R.id.action_settings:
+        result = true;
+        break;
+      default:
+        break;
     }
 
-    return super.onOptionsItemSelected(item);
+    return result || super.onOptionsItemSelected(item);
   }
 }
