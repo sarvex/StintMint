@@ -16,4 +16,9 @@
   <string name="action_logout">Logout</string>
   <string name="sign_up">Sign Up</string>
   <string name="sign_in">Sign In</string>
+  <string name="title_activity_stint">StintActivity</string>
+  <string name="accepted_stint">Accepted</string>
+  <string name="approved_stint">Approved</string>
+  <string name="completed_stint">Completed</string>
+  <string name="offerred_stint">Offered</string>
 </resources>
