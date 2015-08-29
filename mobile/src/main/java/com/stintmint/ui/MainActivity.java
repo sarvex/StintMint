@@ -1,5 +1,7 @@
 package com.stintmint.ui;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -11,6 +13,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,12 +28,17 @@ public class MainActivity extends AppCompatActivity
     CompletedStintFragment.OnFragmentInteractionListener, OfferredStintFragment.OnFragmentInteractionListener {
 
   private DrawerLayout drawerLayout;
+  private boolean searchBoxShown = false;
+  private Toolbar toolbar;
+
 
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+    toolbar = (Toolbar) findViewById(R.id.toolbar);
+    toolbar.setTitle(R.string.stints);
     setSupportActionBar(toolbar);
 
     final ActionBar actionBar = getSupportActionBar();
@@ -94,7 +102,18 @@ public class MainActivity extends AppCompatActivity
   @Override
   public boolean onCreateOptionsMenu(final Menu menu) {
     getMenuInflater().inflate(R.menu.menu_main, menu);
-    return true;
+    MenuItem searchItem = menu.findItem(R.id.action_search);
+
+    SearchManager searchManager = (SearchManager) MainActivity.this.getSystemService(Context.SEARCH_SERVICE);
+
+    SearchView searchView = null;
+    if (searchItem != null) {
+      searchView = (SearchView) searchItem.getActionView();
+    }
+    if (searchView != null) {
+      searchView.setSearchableInfo(searchManager.getSearchableInfo(MainActivity.this.getComponentName()));
+    }
+    return super.onCreateOptionsMenu(menu);
   }
 
   @Override
