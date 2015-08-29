@@ -22,10 +22,11 @@ import android.view.View;
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
 import com.stintmint.R;
+import com.stintmint.ui.auth.LoginActivity;
+import com.stintmint.ui.stint.StintFragment;
 
 public class MainActivity extends AppCompatActivity
-    implements ApprovedStintFragment.OnFragmentInteractionListener, AcceptedStintFragment.OnFragmentInteractionListener,
-    CompletedStintFragment.OnFragmentInteractionListener, OfferredStintFragment.OnFragmentInteractionListener {
+    implements StintFragment.OnFragmentInteractionListener {
 
   private DrawerLayout drawerLayout;
   private boolean searchBoxShown = false;
@@ -64,10 +65,10 @@ public class MainActivity extends AppCompatActivity
     ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
     if (viewPager != null) {
       PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
-      adapter.addFragment(new OfferredStintFragment(), "Offered");
-      adapter.addFragment(new AcceptedStintFragment(), "Accepted");
-      adapter.addFragment(new CompletedStintFragment(), "Completed");
-      adapter.addFragment(new ApprovedStintFragment(), "Approved");
+      adapter.addFragment(new StintFragment(), "Offered");
+      adapter.addFragment(new StintFragment(), "Accepted");
+      adapter.addFragment(new StintFragment(), "Completed");
+      adapter.addFragment(new StintFragment(), "Approved");
       viewPager.setAdapter(adapter);
       viewPager.setCurrentItem(1);
     }

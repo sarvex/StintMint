@@ -1,4 +1,4 @@
-package com.stintmint.ui;
+package com.stintmint.ui.auth;
 
 import android.app.AlertDialog.Builder;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 import com.stintmint.R;
+import com.stintmint.ui.MainActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
