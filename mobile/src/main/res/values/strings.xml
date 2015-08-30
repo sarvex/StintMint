@@ -22,4 +22,7 @@
   <string name="completed_stint">Completed</string>
   <string name="offerred_stint">Offered</string>
   <string name="stints">Stints</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

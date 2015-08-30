@@ -1,55 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:layout_margin="6dp">
+<android.support.v7.widget.CardView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:card_view="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/stint_card_view"
+  android:layout_height="wrap_content"
+  android:layout_width="match_parent"
+  android:layout_margin="3dp"
+  card_view:cardCornerRadius="3dp"
+  card_view:cardElevation="6dp">
 
-  <android.support.v7.widget.CardView
-    android:id="@+id/stint_card_view"
+  <RelativeLayout
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:padding="4dp"
+    android:background="@drawable/bg_gradient">
 
-    <RelativeLayout
-      android:layout_width="match_parent"
+    <ImageView
+      android:id="@+id/stint_photo"
+      android:layout_alignParentStart="true"
+      android:layout_alignParentTop="true"
       android:layout_height="wrap_content"
-      android:padding="16dp">
+      android:layout_marginEnd="16dp"
+      android:layout_width="wrap_content"
+      android:src="@drawable/ic_menu"/>
 
-      <ImageView
-        android:id="@+id/stint_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="16dp"/>
+    <TextView
+      android:id="@+id/stint_name"
+      android:layout_alignParentTop="true"
+      android:layout_height="wrap_content"
+      android:layout_toEndOf="@id/stint_photo"
+      android:layout_width="wrap_content"
+      android:textColor="#107F1F"
+      android:textSize="24sp"
+      tools:text="Stint Name"/>
 
-      <TextView
-        android:id="@+id/stint_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@id/stint_photo"
-        android:textSize="30sp"/>
+    <TextView
+      android:id="@+id/stint_description"
+      android:layout_below="@id/stint_name"
+      android:layout_height="wrap_content"
+      android:layout_toEndOf="@id/stint_photo"
+      android:layout_width="wrap_content"
+      android:textColor="#309F3F"
+      tools:text="Stint Description"/>
 
-      <TextView
-        android:id="@+id/stint_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stint_name"
-        android:layout_toEndOf="@id/stint_photo"/>
+    <TextView
+      android:id="@+id/stint_left"
+      android:layout_below="@id/stint_description"
+      android:layout_height="wrap_content"
+      android:layout_toEndOf="@id/stint_photo"
+      android:layout_width="wrap_content"
+      android:textColor="#FF4081"
+      android:textSize="18sp"
+      tools:text="2"/>
 
-      <TextView
-        android:id="@+id/stint_days_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stint_description"
-        android:layout_toEndOf="@id/stint_photo"/>
+    <TextView
+      android:id="@+id/stint_left_label"
+      android:layout_below="@id/stint_description"
+      android:layout_height="wrap_content"
+      android:layout_toEndOf="@id/stint_left"
+      android:layout_width="wrap_content"
+      android:textColor="#309F3F"
+      android:textSize="18sp"
+      tools:text=" Hours Left"/>
 
-      <TextView
-        android:id="@+id/stint_days_left_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stint_description"
-        android:layout_toEndOf="@id/stint_days_left"/>
-    </RelativeLayout>
-  </android.support.v7.widget.CardView>
-</LinearLayout>
+    <ImageView
+      android:id="@+id/stint_done"
+      android:layout_alignParentEnd="true"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:src="@drawable/ic_done"/>
+  </RelativeLayout>
+</android.support.v7.widget.CardView>
+

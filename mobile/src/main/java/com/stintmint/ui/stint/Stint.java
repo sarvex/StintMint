@@ -19,10 +19,64 @@ public class Stint implements Parcelable {
     }
   };
 
+  private int image;
+  private String name;
+  private String description;
+  private int left;
+  private int done;
+
   public Stint() {
   }
 
   public Stint(Parcel in) {
+  }
+
+  public Stint(int image, String name, String description, int left, int done) {
+    this.image = image;
+    this.name = name;
+    this.description = description;
+    this.left = left;
+    this.done = done;
+  }
+
+  public int getImage() {
+    return image;
+  }
+
+  public void setImage(int image) {
+    this.image = image;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public int getLeft() {
+    return left;
+  }
+
+  public void setLeft(int left) {
+    this.left = left;
+  }
+
+  public int getDone() {
+    return done;
+  }
+
+  public void setDone(int done) {
+    this.done = done;
   }
 
   @Override

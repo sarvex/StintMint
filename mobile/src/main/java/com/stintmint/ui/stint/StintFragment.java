@@ -3,6 +3,7 @@ package com.stintmint.ui.stint;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.stintmint.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -59,6 +61,18 @@ public class StintFragment extends Fragment {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
+    // TODO dummy data
+    stints = new ArrayList<>(10);
+    stints.add(new Stint(R.drawable.ic_menu, "Stint 1", "Stint One Description", 1, R.drawable.ic_done));
+    stints.add(new Stint(R.drawable.ic_menu, "Stint 2", "Stint Two Description", 2, R.drawable.ic_done));
+    stints.add(new Stint(R.drawable.ic_menu, "Stint 3", "Stint Three Description", 3, R.drawable.ic_done));
+    stints.add(new Stint(R.drawable.ic_menu, "Stint 4", "Stint Four Description", 4, R.drawable.ic_done));
+    stints.add(new Stint(R.drawable.ic_menu, "Stint 5", "Stint Five Description", 5, R.drawable.ic_done));
+    stints.add(new Stint(R.drawable.ic_menu, "Stint 6", "Stint Six Description", 6, R.drawable.ic_done));
+    stints.add(new Stint(R.drawable.ic_menu, "Stint 7", "Stint Seven Description", 7, R.drawable.ic_done));
+    stints.add(new Stint(R.drawable.ic_menu, "Stint 8", "Stint Eight Description", 8, R.drawable.ic_done));
+    stints.add(new Stint(R.drawable.ic_menu, "Stint 9", "Stint Nine Description", 9, R.drawable.ic_done));
+
     if (getArguments() != null) {
       mParam1 = getArguments().getString(ARG_PARAM1);
       mParam2 = getArguments().getString(ARG_PARAM2);
@@ -69,10 +83,10 @@ public class StintFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_stint, container, false);
     ButterKnife.bind(this, view);
-
-    recyclerView.setAdapter(new StintAdapter(stints));
     recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+    recyclerView.setItemAnimator(new DefaultItemAnimator());
     recyclerView.setHasFixedSize(true);
+    recyclerView.setAdapter(new StintAdapter(stints));
 
     return view;
   }
