@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "794031447867",
+    "firebase_url": "https://buhee-861a5.firebaseio.com",
+    "project_id": "buhee-861a5",
+    "storage_bucket": "buhee-861a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794031447867:android:06b244e4569eef87",
+        "android_client_info": {
+          "package_name": "com.stintmint.stintmint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794031447867-ffi2j2o6grsloa348e3s35p07kki6qhp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkoJm49k1pyXW74J77zfWVWGKX6BfOXiA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
