@@ -37,9 +37,6 @@
             </intent-filter>
         </activity>
         <activity
-          android:name=".ui.MapsActivity"
-          android:label="@string/title_activity_maps"/>
-        <activity
           android:name=".ui.auth.LoginActivity"
           android:label="@string/title_activity_login"/>
         <activity
@@ -47,17 +44,6 @@
           android:label="@string/title_activity_sign_up"
           android:parentActivityName=".ui.auth.LoginActivity"/>
 
-        <receiver
-          android:name="com.google.android.gms.gcm.GcmReceiver"
-          android:exported="true"
-          android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
-
-                <category android:name="com.stintmint.gcm"/>
-            </intent-filter>
-        </receiver>
         <receiver
           android:name=".depend.MainBroadcastReceiver"
           android:enabled="true"
@@ -78,12 +64,6 @@
             </intent-filter>
         </service>
 
-        <meta-data
-          android:name="com.google.android.gms.version"
-          android:value="@integer/google_play_services_version"/>
-        <meta-data
-          android:name="com.google.android.maps.v2.API_KEY"
-          android:value="@string/google_maps_key"/>
         <meta-data
           android:name="io.fabric.ApiKey"
           android:value="1f64cca0f97c0261f093ca34987001e48d150fc2"/>

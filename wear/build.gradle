@@ -1,18 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.hugo'
-apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'io.fabric'
-apply plugin: 'idea'
-apply plugin: 'checkstyle'
 
 android {
-  compileSdkVersion Integer.parseInt(project.COMPILE_SDK_VERSION)
-  buildToolsVersion project.BUILD_TOOLS_VERSION
+  compileSdkVersion Integer.parseInt(project.COMPILE_SDK)
+  buildToolsVersion project.BUILD_TOOLS
 
   defaultConfig {
     applicationId "com.stintmint"
     minSdkVersion 20
-    targetSdkVersion Integer.parseInt(project.TARGET_SDK_VERSION)
+    targetSdkVersion Integer.parseInt(project.TARGET_SDK)
     versionCode Integer.parseInt(project.VERSION_CODE)
     versionName project.VERSION_CODE
 
@@ -32,21 +29,14 @@ android {
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
-  compile 'com.google.android.support:wearable:1.3.0'
-  compile 'com.google.android.gms:play-services-wearable:7.8.0'
+  compile 'com.google.android.support:wearable:1.4.0'
+  compile 'com.google.android.gms:play-services-wearable:10.0.1'
 
   compile 'com.parse:parse-android:1.10.1'
   compile 'com.facebook.android:facebook-android-sdk:4.5.0'
   compile 'com.squareup.retrofit:retrofit:1.9.0'
   compile 'com.squareup.picasso:picasso:2.5.2'
   compile 'com.jakewharton:butterknife:7.0.1'
-
-  compile "org.parceler:parceler-api:1.0.3"
-  apt "org.parceler:parceler:1.0.3"
-
-  compile 'com.sora.util.akatsuki:akatsuki-api:0.0.1'
-  apt 'com.sora.util.akatsuki:akatsuki-compiler:0.0.1'
-  compile 'com.sora.util.akatsuki:akatsuki-parceler:0.0.1@aar'
 
   debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3.1'
   releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
