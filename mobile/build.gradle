@@ -62,7 +62,7 @@ dependencies {
   wearApp project(':wear')
 
   debugCompile 'com.squareup.leakcanary:leakcanary-android:1.6.3'
-  releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3.1'
+  releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
 
   compile group: 'com.crashlytics.sdk.android', name: 'crashlytics', version: '2.10.1', ext: 'aar', transitive: true
   compile group: 'com.twitter.sdk.android', name: 'twitter', version: '1.7.2', ext: 'aar', transitive: true
