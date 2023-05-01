@@ -33,7 +33,7 @@ dependencies {
   compile 'com.google.android.gms:play-services-wearable:10.0.1'
 
   compile 'com.parse:parse-android:1.10.1'
-  compile 'com.facebook.android:facebook-android-sdk:4.5.0'
+  compile 'com.facebook.android:facebook-android-sdk:4.42.0'
   compile 'com.squareup.retrofit:retrofit:1.9.0'
   compile 'com.squareup.picasso:picasso:2.5.2'
   compile 'com.jakewharton:butterknife:7.0.1'
