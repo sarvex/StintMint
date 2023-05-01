@@ -61,7 +61,7 @@ dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   wearApp project(':wear')
 
-  debugCompile 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+  debugCompile 'com.squareup.leakcanary:leakcanary-android:2.10'
   releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
 
   compile group: 'com.crashlytics.sdk.android', name: 'crashlytics', version: '2.10.1', ext: 'aar', transitive: true
